@@ -1,5 +1,10 @@
 Name: Will Roberts
 Location: Colorado
-Started in Coding: Always been in tech, built all computers owned, video games, has built web sites using GeoCities
-Previous Jobs: Was in cyber security 
+Background: Always been in tech, built all computers owned, video games, has built web sites using GeoCities
+Previous Jobs: Was in cyber security, Veteran
+Strength: Communication, creative problem solver
+Weakness: Optimisum 
+Dream Job: Remote software engineer for a company with great work life balance
+Technological Interests: Loves all of them, machine learning/ai at the top
+Resources: Reddit, CNN Tech, Wired
 
