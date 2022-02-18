@@ -1,4 +1,38 @@
 .fancy-header {
-    color: purple;
+    color: darkturquoise;
     text-decoration: underline;
+    text-align: center;
+}
+
+body {
+    background-color: crimson;
+    background-image: url("https://previews.123rf.com/images/scandinavianstock/scandinavianstock1409/scandinavianstock140900005/31231336-fond-bleu-concept-javascript-avec-le-texte-en-bleu.jpg?fj=1");
+    background-size: cover;
+    font-family: "Bookman Old Style";
+    color: coral;
+}
+
+li {
+    list-style: georgian;
+}
+
+table, th, td {
+    padding: 20px;
+    font-size: 15px;
+}
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: red;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a:active {
+    color: darkmagenta;
 }
