@@ -82,14 +82,56 @@ Should this be a standalone function or should it be a method on the Person obje
 //
 // console.log(getNames());
 
-function warmup (num) {
-    if (num += 1) {
-        return true;
-    } else {
-        return false;
+// function warmup (num) {
+//     if (num += 1) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+//
+// console.log(1)
+
+function isANum(num) {
+    return !isNaN(parseFloat(num));
+}
+// string
+console.log(isANum("zebra"));
+// numeric string
+console.log(isANum("12"));
+
+/*JS Warmup 2-28
+Warmup: Write a function called removeAll that takes two parameters. One that represents an array and another that represents a value to be removed from that array. When called this function should return an array with all the values of the original array except the specified value to be removed.
+    ex:
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
+
+console.log(removeAll(bugs, "ant"));
+
+// should print
+[
+    'mosquito',
+    'scorpion',
+    'mosquito',
+    'typo',
+    'reference error',
+    'type error'
+]*/
+
+function removeAll(anArray, valueToRemove) {
+    let filteredArray = [];
+    // anArray.forEach(function (ele) {
+    //     if (valueToRemove !== ele) {
+    //         filteredArray.push(ele);
+    //     }
+    // })
+    for (let i = 0; i < anArray.length; i++) {
+        if (valueToRemove === anArray[i] {
+            continue;
+        })
     }
+    return filteredArray;
 }
 
-console.log(1)
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 
-
+console.log(removeAll(bugs, "ant"));
