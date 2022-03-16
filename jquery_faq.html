@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Faq</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+       .highlighted {
+           background-color: #FF0;
+       }
+       .bold-font {
+           font-weight: bold;
+       }
+    </style>
+</head>
+<body>
+
+    <dl>
+        <dt>Gates of the Artic National Park and Preserve</dt>
+        <dd class="invisible">Largest.</dd>
+
+        <dt>Test</dt>
+        <dd class="invisible">Another Test</dd>
+
+        <dt>Test</dt>
+        <dd class="invisible">Another Test</dd>
+
+        <dt>Test</dt>
+        <dd class="invisible">Another Test</dd>
+    </dl>
+
+    <h3 class="bolded">National Parks</h3>
+    <ul class="bold-this" id="national-parks">
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li class="important highlighted">Test</li>
+    </ul>
+
+    <h3 class="bolded">National Parks 2</h3>
+    <ul class="bold-this" id="national-parks-2">
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li class="important highlighted">Test</li>
+    </ul>
+
+    <h3 class="bolded">National Parks 3</h3>
+    <ul class="bold-this" id="national-parks-3">
+        <li>Test</li>
+        <li>Test</li>
+        <li>Test</li>
+        <li class="important highlighted">Test</li>
+    </ul>
+
+    <a href="#" id="bg-yellow">Important Info</a>
+    <a href="#" id="hide-dd">Click here</a>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script src="js/jquery_faq.js"></script>
+
+<script>
+    "use strict";
+
+    // Create a button that, when clicked, makes the last li in each ul have a yellow background.
+    $(document).ready(function () {
+        $('#bg-yellow').click(function () {
+            event.preventDefault();
+            $('ul').each(function () {
+                $(this).children().last().toggleClass('highlighted');
+            })
+            // $('.important').toggleClass('highlighted');
+        })
+    });
+
+    // When any h3 is clicked, all li underneath
+    $(document).ready(function () {
+        $('h3').click(function () {
+            event.preventDefault();
+            $(this).next().children().toggleClass('bold-font');
+            // $('li').css('font-weight', 'bold');
+            // $('h3').children().css('font-weight', 'bold');
+        })
+    });
+
+    // When any list item is clicked, first li of the parent ul should have a font color of blue
+    $(document).ready(function () {
+        $('li').click(function () {
+            // li -----> ul -------> li
+            $(this).parent().children().first().css('color', 'blue');
+        })
+    });
+
+    /// Attempt at Attributes and CSS exercise
+    /*$('dd').addClass('invisible');
+
+    $(document).ready(function () {
+        $('hide-dd').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        })
+    })*/
+
+    /*$(document).ready(function () {
+        $('#hide-dd').click(function (event) {
+            event.preventDefault();
+            $('.invisible').toggleClass('invisible')
+        })
+    });*/
+
+    //Walkthrough Code
+    $(document).ready(function () {
+        $('#hide-dd').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible')
+        });
+
+        $('dt').click(function () {
+            $(this).toggleClass('highlighted');
+            // $(this).css('background-color', 'yellow');
+        });
+    });
+
+</script>
+</body>
+</html>
