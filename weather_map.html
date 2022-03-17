@@ -2,19 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="js/keys.js"></script>
+
     <title>Weather Map</title>
 </head>
 <body>
-
+<script src="js/keys.js"></script>
+<div id="container">
 <script>
+    // fetch daily.weather.description  daily.humidity  daily.wind_speed    daily.pressure  daily.dt(time)  lat lon
     // How to fetch
     fetch("https://api.openweathermap.org/data/2.5/onecall?lat=29.76&lon=-95.36&units=imperial&appid=" + OWM_KEY)
         .then(response => response.json())
         .then(data => {
             console.log(data.daily)
+            let html = "";
+            html += '<ul>';
+            // Get the daily forecast for the next 5 days
+            for (let i = 0; i < 5; i++) {
+                let dailyTemp = data.daily[i].temp.day;
+                // Change feels_like to the weather.description (Cant fetch description data)
+                let dailyDescription = data.daily[i].feels_like.day;
+                let dailyHumidity = data.daily[i].humidity;
+                let dailyWind = data.daily[i].wind_speed;
+                let dailyPressure = data.daily[i].pressure;
+                html += '<li>' + 'Temperature: ' + dailyTemp + '</li>';
+                html += '<li>' + 'Description: ' + dailyDescription + '</li>';
+                html += '<li>' + 'Humidity: ' + dailyHumidity + '</li>';
+                html += '<li>' + 'Wind: ' + dailyWind + '</li>';
+                html += '<li>' + 'Pressure: ' + dailyPressure + '</li>';
+            }
+            html += '</ul>';
+            $('#container').html(html);
         });
 </script>
+</div>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
