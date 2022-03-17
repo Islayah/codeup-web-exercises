@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/keys.js"></script>
+    <title>Weather Map</title>
+</head>
+<body>
+
+<script>
+    // How to fetch
+    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=29.76&lon=-95.36&units=imperial&appid=" + OWM_KEY)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.daily)
+        });
+</script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/keys.js"></script>
+</body>
+</html>
